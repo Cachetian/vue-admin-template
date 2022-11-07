@@ -78,6 +78,28 @@ export const constantRoutes = [
   },
 
   {
+    path: '/skyexample',
+    component: Layout,
+    redirect: '/skyexample/table',
+    name: 'Example',
+    meta: { title: 'Sky Example', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/skytable/index'),
+        meta: { title: 'Sky Table', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/skytree/index'),
+        meta: { title: 'Sky Tree', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
     path: '/form',
     component: Layout,
     children: [
